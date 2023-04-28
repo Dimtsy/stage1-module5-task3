@@ -29,7 +29,8 @@ public class CollectionService {
     }
 
     public Integer sum(List<Integer> list) {
-        return list.stream()
-                .reduce(Integer::sum).get();
+        return !list.isEmpty() ? list.stream()
+                .reduce(Integer::sum).get() : 0;
+
     }
 }
